@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="news_data"
+            type="com.example.newsassignmentzevo.newslist.model_classes.Model_NewsList.DataArticles" />
+    </data>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:layout_margin="3dp"
+        android:background="@color/black"
+        android:id="@+id/fl_newsDetail">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/iv_news_image"
+            bind:imageUrl="@{news_data.urlToImage}"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/news_title_bg"
+            android:layout_gravity="bottom"
+            android:id="@+id/tv_title"
+            android:padding="3dp"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:text="@{news_data.title}"/>
+    </FrameLayout>
+</layout>
